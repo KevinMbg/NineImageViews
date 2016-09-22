@@ -28,10 +28,10 @@ dependencies {
   <version>1.2</version>
   <type>pom</type>
 </dependency>
-
+```
 布局中使用
 
-```java
+```xml
     <com.mbg.nineimageview.NineImageView
             android:id="@=id/nineimageview"
             android:layout_width="match_parent"
