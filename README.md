@@ -4,9 +4,9 @@ Android NineImageView 是类似于微信朋友圈以及新浪微博的九宫图�
 
 ###Demo
 
-![NineImageView](https://github.com/KevinMbg/NineImageView/raw/master/demo/scroll.gif)
+![NineImageView](https://github.com/KevinMbg/NineImageViews/raw/master/demo/scroll.gif)
 
-[Download Demo](https://github.com/KevinMbg/NineImageView/blob/master/demo/NineImageView-demo.apk)
+[Download Demo](https://github.com/KevinMbg/NineImageViews/blob/master/demo/NineImageView-demo.apk)
 
 ###Usage
 ---
@@ -126,5 +126,4 @@ dependencies {
     }
 
 ```
-
 
