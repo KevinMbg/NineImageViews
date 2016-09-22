@@ -7,8 +7,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.mbg.nineimageview.NineGridView;
-import com.mbg.nineimageview.NineGridViewAdapter;
+import com.mbg.nineimageview.NineImageView;
+import com.mbg.nineimageview.NineImageViewAdapter;
 import com.mbg.nineimageviewtest.R;
 import com.mbg.nineimageviewtest.bean.Dynamic;
 import com.squareup.picasso.Picasso;
@@ -22,9 +22,9 @@ public class RecyclerViewHolder extends RecyclerView.ViewHolder{
     public ImageView headIcon;
     private TextView nickName;
     private TextView content;
-    private NineGridView image9View;
+    private NineImageView image9View;
 
-    private NineGridViewAdapter adapter=new NineGridViewAdapter<String>() {
+    private NineImageViewAdapter adapter=new NineImageViewAdapter<String>() {
         @Override
         protected void onDisplayImage(Context context, final ImageView imageView, String url) {
             Picasso.with(context)
@@ -40,12 +40,12 @@ public class RecyclerViewHolder extends RecyclerView.ViewHolder{
 
     };
 
-    public RecyclerViewHolder(View itemView, NineGridView.onBindScrollSpeedListener listener) {
+    public RecyclerViewHolder(View itemView, NineImageView.onBindScrollSpeedListener listener) {
         super(itemView);
         headIcon=(ImageView)itemView.findViewById(R.id.headIv);
         nickName=(TextView)itemView.findViewById(R.id.nameTv);
         content=(TextView)itemView.findViewById(R.id.contentTv);
-        image9View=(NineGridView)itemView.findViewById(R.id.image9view);
+        image9View=(NineImageView)itemView.findViewById(R.id.image9view);
         image9View.setAdapter(adapter);
         image9View.setOnBindScrllListener(listener);
 

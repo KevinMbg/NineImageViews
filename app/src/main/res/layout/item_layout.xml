@@ -34,7 +34,7 @@
             android:layout_marginTop="5dip"/>
 
         <!-- 不同的地方 -->
-        <com.mbg.nineimageview.NineGridView
+        <com.mbg.nineimageview.NineImageView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/image9view"

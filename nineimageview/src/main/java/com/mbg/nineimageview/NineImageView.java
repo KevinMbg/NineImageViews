@@ -14,7 +14,7 @@ import java.util.List;
 /**
  * Created by Administrator on 2016/9/21.
  */
-public class NineGridView<T> extends LinearLayout {
+public class NineImageView<T> extends LinearLayout {
 
     private static int MAX_COUNT=3;
     private int space=4;//space of items
@@ -28,22 +28,22 @@ public class NineGridView<T> extends LinearLayout {
     private List<LinearLayout> linearLayoutList;
 
     private List<T> imageDataList;
-    private NineGridViewAdapter mAdapter;
+    private NineImageViewAdapter mAdapter;
     private LayoutParams commenParams;
 
-    public NineGridView(Context context) {
+    public NineImageView(Context context) {
         this(context,null);
     }
 
-    public NineGridView(Context context, AttributeSet attrs) {
+    public NineImageView(Context context, AttributeSet attrs) {
         super(context, attrs);
         imageViewList=new ArrayList<>();
         linearLayoutList=new ArrayList<>();
 
-        TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.NineGridView);
-        this.space = (int) typedArray.getDimension(R.styleable.NineGridView_imgSpace, 0);
-        this.mSingleSize = typedArray.getDimensionPixelSize(R.styleable.NineGridView_singleImgSize, -1);
-        this.mGridSize=typedArray.getDimensionPixelSize(R.styleable.NineGridView_defalGridSize,75);
+        TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.NineImageView);
+        this.space = (int) typedArray.getDimension(R.styleable.NineImageView_imgSpace, 0);
+        this.mSingleSize = typedArray.getDimensionPixelSize(R.styleable.NineImageView_singleImgSize, -1);
+        this.mGridSize=typedArray.getDimensionPixelSize(R.styleable.NineImageView_defalGridSize,75);
         typedArray.recycle();
         this.setOrientation(VERTICAL);
         commenParams=new LayoutParams(mGridSize,mGridSize);
@@ -51,6 +51,10 @@ public class NineGridView<T> extends LinearLayout {
         initLinearLayoutList();
     }
 
+    /**
+     * set Space of Items
+     * @param space space
+     */
     public void setSpace(int space){
         this.space=space;
     }
@@ -74,7 +78,7 @@ public class NineGridView<T> extends LinearLayout {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec);
     }
 
-    public void setAdapter(NineGridViewAdapter adapter){
+    public void setAdapter(NineImageViewAdapter adapter){
         this.mAdapter=adapter;
     }
 

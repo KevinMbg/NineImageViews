@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * Created by Administrator on 2016/9/21.
  */
-public abstract class NineGridViewAdapter<T> {
+public abstract class NineImageViewAdapter<T> {
     protected abstract void onDisplayImage(Context context, ImageView imageView, T t);
 
 

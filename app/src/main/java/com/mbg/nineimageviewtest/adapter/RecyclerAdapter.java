@@ -5,7 +5,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
-import com.mbg.nineimageview.NineGridView;
+import com.mbg.nineimageview.NineImageView;
 import com.mbg.nineimageviewtest.R;
 import com.mbg.nineimageviewtest.bean.Dynamic;
 import com.squareup.picasso.Picasso;
@@ -20,7 +20,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerViewHolder> {
 
     private List<Dynamic> dynamicList;
     private Context mContext;
-    private NineGridView.onBindScrollSpeedListener listener;
+    private NineImageView.onBindScrollSpeedListener listener;
     private boolean isScrolling=false;
     public RecyclerAdapter(Context context,List list){
         if(list == null){
@@ -29,7 +29,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerViewHolder> {
             this.dynamicList = list;
         }
         this.mContext=context;
-        listener=new NineGridView.onBindScrollSpeedListener() {
+        listener=new NineImageView.onBindScrollSpeedListener() {
             @Override
             public boolean isScrolling() {
                 return isScrolling;
