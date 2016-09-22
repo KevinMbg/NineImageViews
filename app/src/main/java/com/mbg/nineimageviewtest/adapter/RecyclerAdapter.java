@@ -51,7 +51,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerViewHolder> {
     @Override
     public void onAttachedToRecyclerView(RecyclerView recyclerView) {
         //super.onAttachedToRecyclerView(recyclerView);
-        recyclerView.setOnScrollListener(new RecyclerView.OnScrollListener(){
+        recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener(){
             @Override
             public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
                 super.onScrollStateChanged(recyclerView, newState);

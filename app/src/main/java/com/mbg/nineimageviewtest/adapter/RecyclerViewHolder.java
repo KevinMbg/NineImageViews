@@ -37,6 +37,7 @@ public class RecyclerViewHolder extends RecyclerView.ViewHolder{
             super.onItemImageClick(context, index, list);
             Toast.makeText(context,"当前位置："+index+","+list.get(index),Toast.LENGTH_SHORT).show();
         }
+
     };
 
     public RecyclerViewHolder(View itemView, NineGridView.onBindScrollSpeedListener listener) {

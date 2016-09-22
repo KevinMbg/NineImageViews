@@ -17,9 +17,9 @@ import java.util.List;
 public class NineGridView<T> extends LinearLayout {
 
     private static int MAX_COUNT=3;
-    private int space=4;//以后通过attr属性设置
-    private int mGridSize=75;//每个格子的大小，以后动态设置
-    private int mSingleSize=120;//一张图片时的大小，以后动态设置
+    private int space=4;//space of items
+    private int mGridSize=75;//commen grid size
+    private int mSingleSize=120;//default single size
     private boolean isMeasured=false;
     private boolean isFourGrid=false;
 
@@ -51,6 +51,17 @@ public class NineGridView<T> extends LinearLayout {
         initLinearLayoutList();
     }
 
+    public void setSpace(int space){
+        this.space=space;
+    }
+
+    public void setDefaultGridSize(int size){
+        this.mGridSize=size;
+    }
+
+    public void setSingleSize(int size){
+        this.mSingleSize=size;
+    }
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
         int width=MeasureSpec.getSize(widthMeasureSpec);
@@ -70,8 +81,8 @@ public class NineGridView<T> extends LinearLayout {
 
 
     /**
-     * 设置数据
-     * @param list 九宫图数据
+     * setImagesData
+     * @param list NineImageView data list
      */
     public void setImagesData(List<T> list){
         this.imageDataList=list;
@@ -102,7 +113,7 @@ public class NineGridView<T> extends LinearLayout {
     }
 
     /**
-     * 初始化Linearlayout布局，因为RecyclerView中会复用ItemView，因此无碍
+     * initLinearlayoutlist
      */
     private void initLinearLayoutList(){
         LinearLayout.LayoutParams params=new LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
@@ -117,8 +128,8 @@ public class NineGridView<T> extends LinearLayout {
     }
 
     /**
-     * 设置Linearlayout的可见性
-     * @param rowNum
+     * set visibility of linearlayouts
+     * @param rowNum rownum
      */
     private void setLinearLayoutList(int rowNum){
         for(int i=0;i<rowNum;i++){
@@ -130,7 +141,7 @@ public class NineGridView<T> extends LinearLayout {
     }
 
     /**
-     * 隐藏不应显示的ImageView
+     * hide redundant ImageView
      */
     private void hideImageViews(int start,int end){
         for(int i=start;i<=end && i< imageViewList.size();i++){
@@ -151,9 +162,6 @@ public class NineGridView<T> extends LinearLayout {
      */
     private ImageView createNormalImageView(){
         ImageView imageView=mAdapter.generateImageView(getContext());
-        /*LayoutParams imageParam=new LayoutParams(mGridSize,mGridSize);
-        imageParam.rightMargin=space;*/
-        //imageView.setLayoutParams(imageParam);
         imageView.setLayoutParams(commenParams);
         imageView.setOnClickListener(new OnClickListener() {
             @Override
@@ -166,8 +174,8 @@ public class NineGridView<T> extends LinearLayout {
     }
 
     /**
-     * 设置第一个图片
-     * @param isSingleMode
+     * set layoutparams of firstimage
+     * @param isSingleMode isSingleMode
      */
     private void setFirstImage(boolean isSingleMode){
         if(0 == imageViewList.size()){
@@ -198,7 +206,7 @@ public class NineGridView<T> extends LinearLayout {
     }
 
     /**
-     * 设置其他位的ImageView
+     * set other ImageViews
      * @param position
      */
     private void setImageView(int position){
