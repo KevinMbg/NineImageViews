@@ -1,17 +1,17 @@
 # NineImageView
-===
+----
 Android NineImageView 是类似于微信朋友圈以及新浪微博的九宫图。可以通过自定义属性以及设置适配器方便地显示九宫图，同时对于复杂布局可以设置滑动监听降低RecyclerView滑动过程中带来的卡顿问题。
 
-###Demo
+### Demo
 
 ![NineImageView](https://github.com/KevinMbg/NineImageViews/raw/master/demo/scroll.gif)
 
 [Download Demo](https://github.com/KevinMbg/NineImageViews/blob/master/demo/NineImageView-demo.apk)
 
-###Usage
+### Usage
 ---
 
-###Gradle
+#### Gradle
 
 ```groovy
 dependencies {
@@ -38,8 +38,7 @@ dependencies {
             android:layout_height="wrap_content"
             app:defalGridSize="70dp"//多图模式下每个格子默认大小
             app:imgSpace="4dp"//每个格子间隔
-            app:singleImgSize="200dp"//单张图默认大小
-            />
+            app:singleImgSize="200dp"//单张图默认大小/>
 ```	
 
 代码中使用方法
@@ -85,7 +84,7 @@ dependencies {
     image9view.setImagesData(List list);//设置数据源，并在Image9View出现在窗口范围内时显示
 ```
 
-####关于RecyclerView中布局过于复杂时滑动卡顿的解决
+#### 关于RecyclerView中布局过于复杂时滑动卡顿的解决
     关于滑动卡顿可以通过设置onBindScrollSpeedListener解决，在RecyclerView.Adapter中通过监听RecyclerView的滑动事件设置是否加载图片，如下：
 
 ```java
